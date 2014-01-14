@@ -8,9 +8,70 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/ETnewItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="70dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <ScrollView
+        android:id="@+id/SVlistContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/ETnewItem"
+        android:layout_below="@+id/ETnewItem"
+        android:layout_marginBottom="80dp" >
+
+        <TextView
+            android:id="@+id/TVmainList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Empty list..." />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/Breset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignLeft="@+id/SVlistContainer"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:onClick="resetList"
+        android:text="Reset" />
+
+    <Button
+        android:id="@+id/Brandomize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Breset"
+        android:layout_alignRight="@+id/BaddItem"
+        android:layout_alignTop="@+id/Breset"
+        android:text="Randomize" 
+        android:onClick="getTheWinner"/>
+
+    <TextView
+        android:id="@+id/TVwinner"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/Breset"
+        android:layout_below="@+id/Brandomize"
+        android:text="Tap on Randomize"
+        android:textSize="22dp" />
+
+    <Button
+        android:id="@+id/BaddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SVlistContainer"
+        android:layout_alignRight="@+id/SVlistContainer"
+        android:onClick="addItem"
+        android:text="+" />
 
 </RelativeLayout>
