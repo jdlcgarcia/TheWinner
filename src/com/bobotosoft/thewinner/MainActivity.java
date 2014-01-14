@@ -84,7 +84,7 @@ public class MainActivity extends Activity{
 	    
 	 }
 	
-	public static int aleatorio(int max,int min){
+	public static int aleatorio(int min,int max){
 		return min + (int)(Math.random() * ((max- min) + 1));
 }
 }
